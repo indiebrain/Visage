@@ -1,0 +1,10 @@
+Visage is a simple utility to convert 
+CD/DVD master images created from 
+OS X's disk utility (.cdr) into .iso format.
+
+usage: ./visage.rb  [options] [path_to_dir]
+
+OPTIONS:
+ -s -S -source	Specifies the directory in which Visage will look for .cdr images. 
+				If this option is not set, visage will look in the directory from which the script was lunched by default.
+ -u|-U|-usage	Displays usage information/examples
