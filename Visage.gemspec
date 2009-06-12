@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors = ["Ed Schmalzle", "Aaron Kuehler"]
   s.date = %q{2009-06-12}
   s.email = %q{Jonas714@gmail.com}
-  s.files = ["VERSION.yml", "Visage.gemspec", "bin/visage", "lib/visage", "lib/visage/converter.rb", "lib/visage/iso.rb", "lib/visage.rb"]
+  s.files = ["VERSION.yml", "bin/visage", "lib/visage", "lib/visage/converter.rb", "lib/visage/iso.rb", "lib/visage.rb"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/nerdEd/visage}
   s.rdoc_options = ["--inline-source", "--charset=UTF-8"]
