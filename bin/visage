@@ -20,7 +20,7 @@ HELP
 
 require 'rubygems'
 require 'optiflag'
-require '../lib/Visage'
+require '../lib/visage'
 
 #####################################################
 # Setup Command Line Options                        #
