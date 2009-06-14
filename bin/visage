@@ -2,22 +2,6 @@
 
 $:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
 
-help = <<HELP
-Visage is a simple utility to convert .cdr and .dvdmedia files into .iso files. Visage is dependent on the OS X hdiutil command.
-
-USAGE: ./visage.rb  [options] [path_to_dir]
-
-OPTIONS:
-	-s -S -source	      Specifies the directory in which Visage will look for source files, or the filename of a specific source file. 
-					            If not specified visage will  assume the current working directory is its source.
-
-	-d -D -destination  Specifies the directory into which Visage will deposit the generates iso(s). If not specifies Visage will use 
-					            the current working directory.
-
-	-h -H -help		      Displays help information/examples
-	
-HELP
-
 require 'rubygems'
 require 'optiflag'
 require 'visage'
@@ -28,20 +12,19 @@ require 'visage'
 module VisageOptions extend OptiFlagSet
   optional_flag "source" do 
     alternate_forms "s", "S"
+    description "Specifies the directory in which Visage will look for source files, or the filename of a specific source file. If not specified visage will  assume the current working directory is its source."
     default '.'
   end
   
   optional_flag "destination" do
     alternate_forms "d", "D"
+    description "Specifies the directory into which Visage will deposit the generates iso(s). If not specifies Visage will use the current working directory."
     default '.'
-  end
-  
-  optional_switch_flag "help" do 
-    alternate_forms "h", "H"
   end
   
   optional_switch_flag "version" do
     alternate_forms "v", "V"
+    description "Returns version information."
   end
   
   and_process!
@@ -50,9 +33,7 @@ end
 #####################################################
 # Run                                               #
 #####################################################
-if( ARGV.flags.help? )
-  puts help
-elsif( ARGV.flags.version? )
+if( ARGV.flags.version? )
   puts Visage.version
 else
   converter = Visage::Converter.new( ARGV.flags.source, ARGV.flags.destination )
