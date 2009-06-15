@@ -15,8 +15,13 @@ module Visage
     end
     
     # Generate the iso file
-    def process
-      `hdiutil makehybrid -udf -udf-volume-name #{@name} -o #{@destination_file_name} #{@source}`
+    def process( test = false )
+      command = "hdiutil makehybrid -udf -udf-volume-name #{@name} -o #{@destination_file_name} #{@source}"
+      if( test )
+        puts command
+      else  
+        system( command )
+      end
     end
     
   end

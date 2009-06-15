@@ -27,6 +27,12 @@ module VisageOptions extend OptiFlagSet
     description "Returns version information."
   end
   
+  optional_switch_flag "test" do
+    alternate_forms "t", "T"
+    default false
+    description "Puts visage into test mode and will only print commands, not run them."
+  end
+  
   and_process!
 end
 
@@ -36,6 +42,6 @@ end
 if( ARGV.flags.version? )
   puts Visage.version
 else
-  converter = Visage::Converter.new( ARGV.flags.source, ARGV.flags.destination )
+  converter = Visage::Converter.new( ARGV.flags.source, ARGV.flags.destination, ARGV.flags.test? )
   converter.process
 end  
