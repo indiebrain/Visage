@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ed Schmalzle", "Aaron Kuehler"]
-  s.date = %q{2009-06-15}
+  s.date = %q{2009-07-20}
   s.default_executable = %q{visage}
   s.email = %q{Jonas714@gmail.com}
   s.executables = ["visage"]
@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
      "bin/visage",
      "lib/visage.rb",
      "lib/visage/converter.rb",
-     "lib/visage/iso.rb"
+     "lib/visage/iso_generator.rb"
   ]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/nerdEd/visage}
